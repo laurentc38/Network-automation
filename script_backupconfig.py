@@ -12,16 +12,24 @@ version 1.0 create by Laurent CHAMBERT
 #SSH activation
 
 #Modules
-from netmiko import ConnectHandler
+from netmiko import ConnectHandler #network devices connection
 import os
 import time
 import datetime
 import json
+import getpass #Passwork mask
 
 #Repository for files backup
-devices_file = '/home/user-ansible/python/devices.json'
-vlan_filename = 'device-vlan-backup-' + '{0:%Y-%m-%d-%H-%M-%S}'.format(datetime.datetime.now()) + '.txt'
-backuproot_dir = '/home/user-ansible/python/backup-dir/'
+devices_file = '/home/user-ansible/network-automation/python/devices.json'
+backuproot_dir = '/home/user-ansible/network-automation/python/backup-dir/'
+
+#Variables for authentification
+print('Enter identification connexion: ')
+username = input('username connexion= ')
+#print('Enter username password=')
+password = getpass.getpass('username password= ')
+#print('Enter enable password=')
+enable = getpass.getpass('enable password=')
 
 #Devices file opening
 with open (devices_file) as json_file:
@@ -32,9 +40,9 @@ with open (devices_file) as json_file:
         device_connect = {
                 'device_type': 'cisco_ios',
                 'host': device['ip'],
-                'username': 'user-ansible',
-                'password': 'ansible',
-                'secret': 'enable' #MDP enable
+                'username': username,
+                'password': password,
+                'secret': enable
         }
         #Repository backup
         backup_dir = backuproot_dir + device['hostname']
@@ -54,8 +62,8 @@ with open (devices_file) as json_file:
         output_runningconfig = net_connect.send_command("show running-config")
 	
 	#Test du type de device
-        if device['hostname'][:1] == 'SW':
-              vlan_file = 'backup-vlan_' +device['hostname'] + \
+        if device['type'] == 'switch':
+              vlan_file = 'backup-vlan_' + device['hostname'] + \
              '_{0:%Y-%m-%d-%H-%M-%S}'.format(datetime.datetime.now()) + '.txt'
               output_vlan = net_connect.send_command("show vlan brief")
 
@@ -68,11 +76,23 @@ with open (devices_file) as json_file:
         file1.write(output_runningconfig)
         file1.close()
 
+        #Check the running-config record
+        if os.path.isfile(backup_dir+'/'+backup_file):
+                print(backup_file+' was recorded')
+        else:
+                print('backup file recording problem !')
+
         #Record vlan
-        if device['hostname'][:1] == 'SW':
+        if device['hostname'][:2] == 'SW':
             file2 = open(backup_dir+'/'+vlan_file,'w')
             file2.write(output_vlan)
             file2.close()
+
+        #Check the vlan record
+        if os.path.isfile(backup_dir+'/'+vlan_file):
+                print(vlan_file+' was recorded')
+        else:
+                print('vlan file recording problem !')
 
 	# Close the connection
         net_connect.exit_enable_mode()
