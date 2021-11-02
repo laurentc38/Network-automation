@@ -20,15 +20,10 @@ Router: Cisco IOS software 7200 version 15.2
 ###Script use###
 
 ---before script used---
-
 Your device must be configured with:
-
 -user with admin privileged
-
 -ip address which must be reachable
-
 -ssh connexion
-
 -modify the repository for files and recording
 
 ---backup script---
