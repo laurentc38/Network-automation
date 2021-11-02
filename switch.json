@@ -1,0 +1,9 @@
+{
+	"devices_list": [
+		{
+			"hostname": "SW-BOU-SG150-02",
+			"ip": "172.16.0.3",
+			"type": "switch"
+		}
+	]
+}
