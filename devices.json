@@ -1,0 +1,19 @@
+{
+	"devices_list": [
+		{
+			"hostname": "RT-BOU-RV350-01",
+			"ip": "172.16.0.254",
+			"type": "router"
+		},
+		{
+			"hostname": "SW-BOU-SG150-01",
+			"ip": "172.16.0.2",
+			"type": "switch"
+		},
+		{
+			"hostname": "SW-BOU-SG150-02",
+			"ip": "172.16.0.3",
+			"type": "switch"
+		}
+	]
+}
