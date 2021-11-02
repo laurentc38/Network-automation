@@ -1,5 +1,6 @@
 Network automation v1.0 (2021/11/02)
 
+License: GNU v3.0
 Script to improve configuration and backup on network devices
 
 New:
