@@ -32,6 +32,7 @@ Your device must be configured with:
 ---backup script---
 
 Create you device.json file with you network devices
+
 ---basicconfig script---
 
 Create your device.json for each device type
