@@ -64,6 +64,9 @@ with open (devices_file) as json_file:
         #Record configuration
         net_connect.exit_config_mode()
         net_connect.send_command_expect('write')
+        #If it's a router, confirm 
+        if device['hostname'] == 'router':
+            net_connect.send_command('enter')
 
         #Check configuration
         output_runningconfig = net_connect.send_command("show running-config")

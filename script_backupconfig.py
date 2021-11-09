@@ -83,18 +83,17 @@ with open (devices_file) as json_file:
                 print('backup file recording problem !')
 
         #Record vlan
-        if device['hostname'][:2] == 'SW':
+        if device['type'] == 'switch':
             file2 = open(backup_dir+'/'+vlan_file,'w')
             file2.write(output_vlan)
             file2.close()
-
         #Check the vlan record
-        if os.path.isfile(backup_dir+'/'+vlan_file):
-                print(vlan_file+' was recorded')
-        else:
-                print('vlan file recording problem !')
+        if device['type'] == 'switch':
+                if os.path.isfile(backup_dir+'/'+vlan_file):
+                        print(vlan_file+' was recorded')
+                else:
+                        print('vlan file recording problem !')
 
 	# Close the connection
         net_connect.exit_enable_mode()
         net_connect.disconnect()
-
