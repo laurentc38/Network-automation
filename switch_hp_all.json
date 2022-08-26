@@ -1,0 +1,99 @@
+{
+	"devices_list": [
+		{
+			"hostname": "JG937A_10.31.50.1",
+			"ip": "10.31.50.1",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.2",
+			"ip": "10.31.50.2",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.3",
+			"ip": "10.31.50.3",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.4",
+			"ip": "10.31.50.4",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.5",
+			"ip": "10.31.50.5",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.6",
+			"ip": "10.31.50.6",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.6",
+			"ip": "10.31.50.6",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.7",
+			"ip": "10.31.50.7",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.8",
+			"ip": "10.31.50.8",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.9",
+			"ip": "10.31.50.9",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.10",
+			"ip": "10.31.50.10",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.11",
+			"ip": "10.31.50.11",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.12",
+			"ip": "10.31.50.12",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.13",
+			"ip": "10.31.50.13",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.14",
+			"ip": "10.31.50.14",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.15",
+			"ip": "10.31.50.15",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.16",
+			"ip": "10.31.50.16",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.17",
+			"ip": "10.31.50.17",
+			"type": "switch"
+		},
+		{
+			"hostname": "JG937A_10.31.50.20",
+			"ip": "10.31.50.20",
+			"type": "switch"
+		}
+	]
+}

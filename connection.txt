@@ -1,0 +1,9 @@
+connection failed to IDA-SG350-10P-125 10.31.50.125
+connection failed to IDA-SG350-10P-151 10.31.50.151
+connection failed to IDA-SG350-10P-155 10.31.50.155
+connection failed to IDA-SG350-10P-156 10.31.50.156
+connection failed to IDA-SG350-10P-157 10.31.50.157
+connection failed to IDA-SG350-10P-160 10.31.50.160
+connection failed to IDA-SG350-10P-162 10.31.50.162
+connection failed to IDA-SG350-10P-163 10.31.50.163
+connection failed to IDA-SG350-10P-198 10.31.50.198

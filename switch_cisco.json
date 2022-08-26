@@ -1,0 +1,9 @@
+{
+	"devices_list": [
+		{
+			"hostname": "IDA-SG350-10P-211",
+			"ip": "10.31.50.211",
+			"type": "switch"
+		}
+	]
+}

@@ -1,0 +1,6 @@
+interface range ten-GigabitEthernet 1/0/49 to GigabitEthernet 1/0/52 -
+port link-type hybrid
+port hybrid vlan 1 10 12 99 1000 1999tagged
+undo voice-vlan mode auto
+voice-vlan 10 enable
+stp enable 

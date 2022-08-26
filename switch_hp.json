@@ -1,0 +1,9 @@
+{
+	"devices_list": [
+		{
+			"hostname": "JG937A_10.31.50.18",
+			"ip": "10.31.50.18",
+			"type": "switch"
+		}
+	]
+}

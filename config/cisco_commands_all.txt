@@ -1,0 +1,46 @@
+#CISCO before ssh
+user adminradiall password
+line ssh
+login authentication defaultcrypto key generate rsa
+ip ssh server
+ip ssh password-auth
+
+#CISCO desktop auto config
+hostname 
+no ip domain lookup
+ip domain name rosusers.priv
+line ssh
+exec-timeout 5
+vlan 10
+interface vlan 10
+name voice
+vlan 12
+interface vlan 12
+name management
+voice vlan id 10
+interface range gi 1-10
+switchport mode trunk
+switchport trunk allow vlan 1,10,12
+ip default-gateway 10.31.3.1
+interface range gi 1-10
+no cdp run
+no ip telnet server
+no ip http server
+no spanning-tree
+ip http secrure-serverr
+sntp server 10.31.0.16
+sntp client enable vlan 1
+snmp-server community radiallida31 ro
+snmp-server host 10.31.50.254 traps version 2c radiallida31
+snmp-server enable traps
+
+#CISCO firmware
+boot system tftp://10.31.200.243/image_cbs_ros_3.1.1.7_release_cisco_signed.bin
+reload
+
+#CISCO ssh auto login
+ip ssh pubkey-auth auto-login
+crypto key pubkey-chain ssh
+user-key adminradiall rsa
+key-string
+AAAAB3NzaC1yc2EAAAADAQABAAACAQCxi7ywR48EUA6oBzm8qUt0WG80gQkbd/KmZFsS4GUpLA6/t0uOhFQqt62uOmKp72ZjPa1YZ/pmxPXVSmot9bO3ZVgK5JkEyN/R4Dt6DxGaqR6lftMe75koB4q50vcrO0oDCBAJNdsEJZf+i+sNYOUrOCGSF1wI8TU2jUlzVMdbrYnHpYUoBZfLpiNFQHHA9DrjlP9lrQZXxE2FJ93kwofP9JM1bSHEFFQLQTdUMHNSstziQakXQha7Itf3FiuTybQpU+j+mb3cieEH8S3VS5cUYEHlRi4NOVkfJvDarNzeTqcIPqc6AzK1cgaOUaYKziLuK18wXzouiLxZJmapLjAismC7nlC21usrPR7JwARZ4ro4xnecfRoZoAapgoX0U9vVa8Lj5TuXBVQs8GwK+LFSJrrhzUzdHdXelEuTYH3Igo8IJWl875z60E5iurA4lHzL5GmHKtb/6pVGe160DpsXjKVbkc+gsBKqxaZRGKsR5BFejXgRmYox5ylmoVy2EL/I1oHpYHrBqj7LJPF6qhnUbvSPHYwWPisDPa/97OPFHZqWkHq+Gg+adcqbQCgj2fb5y387PUUwlqvgDitZwhROah42/FJbUlwCtbFwCkZdykcbUXpWEe1qmxjAmEaYN4DTj81wCkOPozm67KPUdtUhMGqWJwjB6Qhuvg83K4+syw== rosusers\chambert_l@IDAINF10
